@@ -9,3 +9,11 @@ export const counterMinus = () => {
            type: "MINUS",
     }
 }
+
+export const counterMultiply = (multiply) => {
+    console.log("ACTION ", multiply)
+    return {
+        type: "MULTIPLY",
+        payload: multiply
+    }
+}

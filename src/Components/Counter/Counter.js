@@ -1,10 +1,10 @@
 import React, { Fragment} from "react";
 import { connect } from "react-redux";
-import { counterPlus, counterMinus } from "../../Actions/CounterActions";
+import { counterPlus, counterMinus, counterMultiply } from "../../Actions/CounterActions";
 import "./Counter.css";
 
-const Counter = ({counter, counterPlus, counterMinus}) => {
-    console.log("Counter inside component => ", counter);
+const Counter = ({counter, counterPlus, counterMinus, counterMultiply}) => {
+    // console.log("Counter inside component => ", counter);
 
     return(
         <Fragment>
@@ -15,6 +15,7 @@ const Counter = ({counter, counterPlus, counterMinus}) => {
                          <span className="counter">{counter}</span>
                          <button type="button" className="btn btn-success plus" onClick={counterPlus}>Plus</button>
                          <button type="button" className="btn btn-warning minus" onClick={counterMinus}>Minus</button>
+                         <button type="button" className="btn btn-danger" onClick={() => counterMultiply(counter)}>Multiply</button>
                     </div>
                 </div>
             </div>
@@ -30,6 +31,7 @@ const mapStateToProps = ({CounterReducer}) =>{
 }
 const mapDispatchToProps ={
     counterPlus,
-    counterMinus
+    counterMinus,
+    counterMultiply
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

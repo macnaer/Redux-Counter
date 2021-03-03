@@ -5,6 +5,7 @@
   font-weight: bolder;
   line-height: 0;
 }
-.plus {
+.plus,
+.minus {
   margin-right: 10px;
 }
